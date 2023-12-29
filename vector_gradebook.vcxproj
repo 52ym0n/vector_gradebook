@@ -133,10 +133,12 @@
     <ClCompile Include="class_gradebook.c" />
     <ClCompile Include="smvector.c" />
     <ClCompile Include="Source.c" />
+    <ClCompile Include="studentvector.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="class_gradebook.h" />
     <ClInclude Include="smvector.h" />
+    <ClInclude Include="studentvector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

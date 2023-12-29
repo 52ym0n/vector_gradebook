@@ -24,12 +24,18 @@
     <ClCompile Include="class_gradebook.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="studentvector.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="smvector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="class_gradebook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="studentvector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
