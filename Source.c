@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "smvector.h"
 #include "class_gradebook.h"
+#include <string.h>
 
 
 int main(void)
@@ -10,21 +11,28 @@ int main(void)
 	add_subject(&class_A, subject1, "math");
 	init_student_vector(&class_A.students, 1);
 
-	char students_names[32][20] = { "Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Heidi", "Ivan",
+	char students_names[32][24] = { "Alice jones", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Heidi", "Ivan",
 											  "Judy", "Kevin", "Linda", "Mallory", "Nancy", "Oscar", "Peggy", "Quentin", "Randy",
 											  "Sybil", "Trudy", "Victor", "Wendy", "Xavier", "Yvonne", "Zoe", "Alex", "Ben", "Cathy", 
 											  "Diana", "Emily", "Fred", "George" };
 
 	int students_max = rand() % 32 -5;
+	
+
+	Student_t stud1;
+
 	for (int i = 0; i < students_max; i++)
 	{
-		add_to_student_vector(&class_A.students, i, students_names[i]);
+
+		stud1.id = i;
+		strcpy_s(stud1.name,24, students_names[i]);
+		student_vector_add(&class_A.students, stud1);
 	}
 
 
 	for (int i = 0; i < students_max; i++)
 	{
-		printf("%s\n", class_A.students.array[i].name);
+		printf("%s\n", class_A.students.array[i]->name);
 	}
 
 	
@@ -42,3 +50,10 @@ int main(void)
 
 	return 0;
 }
+
+// cleanup interface, one file one struct
+// every srtruct must have <struct_name>_init()
+//	<struct_name>_init()
+//		define name len
+//		darray <struct_name>_init() <struct_name>_pushback() <struct_name>_destroy() <struct_name>_getter()
+//		1 przediot, dodawaæ studentów dodawaæ oceny na tablicach dynamicznych 

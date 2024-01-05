@@ -1,18 +1,19 @@
 #include "studentvector.h"
+#include <string.h>
 
 void init_student_vector(Vector_student_t* vector, size_t init_size)
 {
 	vector->count = 0;
 	vector->capacity = init_size;
-	vector->array = malloc(init_size * sizeof(Student_t));
+	vector->array = malloc(init_size * sizeof(Student_t*));
 }
 
-void add_to_student_vector(Vector_student_t* vector, int student_id, char student_name[])
+void student_vector_add(Vector_student_t* vector, Student_t s)
 {
 	if (vector->count == vector->capacity)
 	{
 		vector->capacity *= 2;
-		Student_t* tmp = realloc(vector->array, vector->capacity * sizeof(Student_t));
+		Student_t** tmp = realloc(vector->array, vector->capacity * sizeof(Student_t*));
 		if (tmp != NULL)
 		{
 			vector->array = tmp;
@@ -20,15 +21,14 @@ void add_to_student_vector(Vector_student_t* vector, int student_id, char studen
 
 	}
 
-	vector->array[vector->count].id = student_id;
 
-	int j = 0;
-	while ((j < 23) || student_name[j] == 0)
-	{
-		vector->array[vector->count].name[j] = student_name[j];
-		j++;
-	}
-	vector->array[vector->count].name[j] = 0;
+	vector->array[vector->count] = malloc(sizeof(Student_t*));
+	if (vector->array[vector->count] == NULL) return;
+		
+
+	strcpy_s(vector->array[vector->count]->name, 24, s.name);
+
+	vector->array[vector->count]->id = s.id;
 
 	vector->count++;
 }
