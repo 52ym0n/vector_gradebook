@@ -21,10 +21,16 @@
     <ClCompile Include="smvector.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="class_gradebook.c">
+    <ClCompile Include="class.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="studentvector.c">
+    <ClCompile Include="Eval.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Subject.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="student.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +38,16 @@
     <ClInclude Include="smvector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="class_gradebook.h">
+    <ClInclude Include="class.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="studentvector.h">
+    <ClInclude Include="Eval.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="student.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

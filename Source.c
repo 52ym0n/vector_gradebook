@@ -1,51 +1,32 @@
 #include <stdio.h>
-#include "smvector.h"
-#include "class_gradebook.h"
-#include <string.h>
-
+#include "class.h"
 
 int main(void)
 {	
-	Class_gradesbook_t class_A;
-
-	add_subject(&class_A, subject1, "math");
-	init_student_vector(&class_A.students, 1);
-
-	char students_names[32][24] = { "Alice jones", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Heidi", "Ivan",
+	char students_names[32][30] = { "Alice jones", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Heidi", "Ivan",
 											  "Judy", "Kevin", "Linda", "Mallory", "Nancy", "Oscar", "Peggy", "Quentin", "Randy",
-											  "Sybil", "Trudy", "Victor", "Wendy", "Xavier", "Yvonne", "Zoe", "Alex", "Ben", "Cathy", 
+											  "Sybil", "Trudy", "Victor", "Wendy", "Xavier", "Yvonne", "Zoe", "Alex", "Ben", "Cathy",
 											  "Diana", "Emily", "Fred", "George" };
 
-	int students_max = rand() % 32 -5;
-	
+	Class_t AT1;
 
-	Student_t stud1;
+	class_init(&AT1, 0, "MATH", 10);
 
-	for (int i = 0; i < students_max; i++)
+	for (int i = 0; i < 32; i++)
 	{
-
-		stud1.id = i;
-		strcpy_s(stud1.name,24, students_names[i]);
-		student_vector_add(&class_A.students, stud1);
+		class_add_student(&AT1, i, students_names[i]);
 	}
 
-
-	for (int i = 0; i < students_max; i++)
+	for (int i = 0; i < 32; i++)
 	{
-		printf("%s\n", class_A.students.array[i]->name);
+		subject_add_evaluation(&AT1.subject1, i, "24-01-2024", 1);
 	}
-
 	
+	class_print_class_info(&AT1);
 
-	//for (int i = 0; i < 32; i++)
-	//{
-	//	for (int j = 0; j < rand() % 5 + 1; j++)
-	//	{
-	//		add_evaluation(&class_A, subject1, rand() % 6 + 1);
-	//	}
-	//}
 
-	//print_gradebok(&class_A);
+	vector_destroy(&AT1.students);
+	vector_destroy(&AT1.subject1.evaluations);
 
 
 	return 0;

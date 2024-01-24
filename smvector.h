@@ -7,13 +7,12 @@ typedef struct Vector
 {
 	size_t count;
 	size_t capacity;
-	int* array;
+	void** array;
 }Vector_t;
 
-void init_vector(Vector_t* vector, size_t init_size);
-void add_to_vector(Vector_t* vector, int new_data);
-int get_from_vector(Vector_t* vector, int index);
-void edit_data_in_vector(Vector_t* vector, int index, int new_data);
-void remove_last_from_vector(Vector_t* vector);
+void vector_init(Vector_t* vector, size_t init_size);
+void vector_push_back(Vector_t* vector, void* new_data_ptr);
+void* vector_get(Vector_t* vector, int index);
+void vector_destroy(Vector_t* vector);
 
 #endif

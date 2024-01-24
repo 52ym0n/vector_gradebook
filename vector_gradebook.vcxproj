@@ -106,7 +106,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard_C>stdc11</LanguageStandard_C>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalOptions>/wd5045 /analyze:stacksize 32768 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/wd4820 /wd5045  /analyze:stacksize 32768 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -130,15 +130,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="class_gradebook.c" />
+    <ClCompile Include="class.c" />
+    <ClCompile Include="Eval.c" />
     <ClCompile Include="smvector.c" />
     <ClCompile Include="Source.c" />
-    <ClCompile Include="studentvector.c" />
+    <ClCompile Include="student.c" />
+    <ClCompile Include="Subject.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="class_gradebook.h" />
+    <ClInclude Include="class.h" />
+    <ClInclude Include="Eval.h" />
     <ClInclude Include="smvector.h" />
-    <ClInclude Include="studentvector.h" />
+    <ClInclude Include="student.h" />
+    <ClInclude Include="Subject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
