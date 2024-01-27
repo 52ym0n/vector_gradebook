@@ -3,7 +3,11 @@
 void subject_init(Subject_t* subject, int subject_id, char name[], int init_vector_size)
 {
 	subject->subject_id = subject_id;
+	#ifdef VSC
 	strcpy_s(subject->name, subject_name_len, name);
+	#else
+	strncpy(subject->name, name, subject_name_len);
+	#endif // VSC
 	vector_init(&subject->evaluations, init_vector_size);
 }
 
