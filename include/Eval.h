@@ -1,6 +1,6 @@
 #ifndef eval_h
 #define eval_h
-
+#include "strcpy.h"
 #define eval_date_len 11
 
 typedef struct Eval

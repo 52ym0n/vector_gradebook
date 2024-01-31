@@ -1,6 +1,6 @@
 #ifndef student_h
 #define student_h
-#include "string.h"
+#include "strcpy.h"
 
 #define  student_name_len 31
 

@@ -3,7 +3,7 @@
 
 #include "smvector.h"
 #include "Eval.h"
-#include "string.h"
+#include "strcpy.h"
 
 #define subject_name_len 31
 
